@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   def index
+    @cars = Car.all
   end
 
   def new
@@ -16,6 +17,16 @@ class CarsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @car = Car.edit(car_params)
+    render :edit
+  end
+
+  # def destroy
+  #   @car.destroy
+  #
+  # end
 
   private
   def car_params

@@ -1,8 +1,14 @@
+
+
+
+
 FactoryGirl.define do
   factory :car do
-    make "MyString"
-    model "MyString"
-    year 1
-    price "9.99"
+    make { Faker::Company.name }
+    model { Faker::Company.name }
+    year { Faker::Number.number(4) }
+    price { Faker::Commerce.price }
+
   end
 end
+
