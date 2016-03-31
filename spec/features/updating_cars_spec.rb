@@ -17,8 +17,8 @@ require 'rails_helper'
     #
     # click_button 'Create Car'
     # expect(page).to have_content('1967 Ford Mustang created')
-    save_and_open_page
-    click_link 'Edit'
+      click_link 'Edit'
+
       fill_in 'Year', with:'1968'
 
     end

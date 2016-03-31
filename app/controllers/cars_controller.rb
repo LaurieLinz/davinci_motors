@@ -19,8 +19,8 @@ class CarsController < ApplicationController
   end
 
   def edit
-    @car = Car.edit(car_params)
-    render :edit
+    @car = Car.find(params[:id])
+    # render :edit
   end
 
   # def destroy
@@ -33,3 +33,4 @@ class CarsController < ApplicationController
     params.require(:car).permit([:year, :make, :model, :price])
   end
 end
+
