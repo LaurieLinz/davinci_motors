@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   def index
+    @cars = Car.all
   end
 
   def new
@@ -17,8 +18,19 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+    @car = Car.find(params[:id])
+    # render :edit
+  end
+
+  # def destroy
+  #   @car.destroy
+  #
+  # end
+
   private
   def car_params
     params.require(:car).permit([:year, :make, :model, :price])
   end
 end
+
